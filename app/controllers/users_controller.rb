@@ -12,6 +12,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url, notice: "Thank you for signing up!"
     else
+      flash.now.alert = "Could not create user"
+      
       render "new"
     end
   end
