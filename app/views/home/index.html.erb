@@ -72,7 +72,7 @@
 	
 		<div class="img">
 			<a href="/venues/<%=venue.id%>">
-				<%= image_tag venue.image_url(:thumb).to_s %>
+				<%= image_tag venue.image_url(:thumb).to_s if venue.image_url %>
 				
 			</a>
 		</div>
