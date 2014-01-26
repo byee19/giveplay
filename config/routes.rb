@@ -1,4 +1,6 @@
 Giveplay::Application.routes.draw do
+  get "map/index"
+
   resources :venues
 
 
