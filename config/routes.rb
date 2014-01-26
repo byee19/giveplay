@@ -1,4 +1,7 @@
 Giveplay::Application.routes.draw do
+  resources :venues
+
+
   get "home/index"
 
   get "sessions/new"

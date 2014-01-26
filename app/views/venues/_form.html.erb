@@ -1,0 +1,79 @@
+<%= form_for @venue, :html => { :class => 'form-horizontal' } do |f| %>
+
+<% if @venue.errors.count > 0 %>
+<div class="alert alert-error">
+<a class="close" data-dismiss="alert">×</a>
+<ul>
+  <% for message in @venue.errors.full_messages %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+</div>
+<% end %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :addressline1, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :addressline1, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :addressline2, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :addressline2, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :city, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :state, :class => 'control-label' %>
+    <div class="controls">
+	    <select name="venue[state]" id="venue[state]">
+			<option value="AB">AB - Alberta</option>
+			<option value="BC">BC - British Columbia</option>
+			<option value="MB">MB - Manitoba</option>
+			<option value="NB">NB - New Brunswick</option>
+			<option value="NL">NL - Newfoundland and Labrador</option>
+			<option value="NS">NS - Nova Scotia</option>
+			<option value="NT">NT - Northwest Territories</option>
+			<option value="NU">NU - Nunavut</option>
+			<option value="ON">ON - Ontario</option>
+			<option value="PE">PE - Prince Edward Island</option>
+			<option value="QC">QC - Quebec</option>
+			<option value="SK">SK - Saskatchewan</option>
+			<option value="YT">YT - Yukon</option>
+
+		</select>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :zipcode, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :zipcode, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :country, :class => 'control-label' %>
+    <div class="controls">
+	    <select name="venue[country]" id="venue[country]">
+			<option value="CAN">Canada</option>
+		</select>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                venues_path, :class => 'btn' %>
+  </div>
+<% end %>
