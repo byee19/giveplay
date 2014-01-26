@@ -5,7 +5,7 @@
 <% end %>
 
 
-
+<div id="blog">
 <div class="container">
 
 <section id="feature_slider" class="">
@@ -52,9 +52,39 @@
     <div class="span12">
 
 <iframe width="100%" scrolling="no" height="400px" frameborder="0" src="/map/index">
+</iframe>
 	
-</div>
-</div>
+
+<div class="row post_row">
+	<% @venues.each do |venue| %>
+	
+	<div class="span4 post">
+		<div class="img">
+			<a href="blogpost.html">
+				<%= image_tag venue.image_url(:thumb).to_s %>
+				
+			</a>
+		</div>
+		<div class="text">
+			<h5>
+			<a href="blogpost.html"><%=venue.name%></a>
+			</h5>
+			<span class="date">Wed, 12 Dec.</span>
+			<p> There are many variations of passages of generators on the embarrassing hidden in slightly distracted by these distribution of letters, as opposed.</p>
+		</div>
+		<div class="author_box">
+			<h6>Alejandra Galvan</h6>
+			<p>Creative Director</p>
+		</div>
+		<a class="plus_wrapper" href="blogpost.html">
+		<span>+</span>
+		</a>
+	</div>
+	<% end %>
 </div>
 
+</div>
+
+</div>
+</div>
 
