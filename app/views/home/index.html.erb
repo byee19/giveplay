@@ -55,19 +55,25 @@
 </iframe>
 	
 
-<div class="row post_row">
+	<% i = 1 %>
 	<% @venues.each do |venue| %>
+	
+	<% if (i % 3) == 1 %>
+	
+	<div class="row post_row">
+	
+	<% end %>
 	
 	<div class="span4 post">
 		<div class="img">
-			<a href="blogpost.html">
+			<a href="/venue/<%=venue.id%>">
 				<%= image_tag venue.image_url(:thumb).to_s %>
 				
 			</a>
 		</div>
 		<div class="text">
 			<h5>
-			<a href="blogpost.html"><%=venue.name%></a>
+			<a href="/venue/<%=venue.id%>"><%=venue.name%></a>
 			</h5>
 			<span class="date">Wed, 12 Dec.</span>
 			<p> There are many variations of passages of generators on the embarrassing hidden in slightly distracted by these distribution of letters, as opposed.</p>
@@ -80,8 +86,15 @@
 		<span>+</span>
 		</a>
 	</div>
+
+	
+	<% if (i % 3) == 1 %>
+	</div>
 	<% end %>
-</div>
+	
+	<% i = i + 1 %>
+
+	<% end %>
 
 </div>
 
