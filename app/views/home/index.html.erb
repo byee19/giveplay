@@ -64,7 +64,12 @@
 	
 	<% end %>
 	
+	<% if (i % 3) == 0 %>
+	<div class="span4 post last">
+	<% else %>	
 	<div class="span4 post">
+	<% end %>
+	
 		<div class="img">
 			<a href="/venue/<%=venue.id%>">
 				<%= image_tag venue.image_url(:thumb).to_s %>
@@ -88,7 +93,7 @@
 	</div>
 
 	
-	<% if (i % 3) == 1 %>
+	<% if (i % 3) == 0 %>
 	</div>
 	<% end %>
 	
