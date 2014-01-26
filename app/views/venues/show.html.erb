@@ -21,7 +21,7 @@
   <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
   <dd><%= @venue.phone_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%= image_tag @venue.image_url(:thumb).to_s %></dd>
+  <dd><%=@venue.image %>:::<%= image_tag @venue.image_url(:thumb).to_s %></dd>
 </dl>
 
 <div class="form-actions">
