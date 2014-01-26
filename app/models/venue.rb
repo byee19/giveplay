@@ -1,6 +1,5 @@
 class Venue < ActiveRecord::Base
-  attr_accessible :addressline1, :addressline2, :city, :country, :name, :state, :zipcode, :phone_number, :image
-  
+  attr_accessible :addressline1, :addressline2, :city, :country, :name, :state, :zipcode, :phone_number, :image, :remote_image_url
   mount_uploader :image, ImageUploader
   
   validates_presence_of :name

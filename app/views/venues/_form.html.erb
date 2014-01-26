@@ -82,6 +82,12 @@
       <%= f.file_field :image, :class => 'text_field' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :remote_image_url, "or image URL", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :remote_image_url, :class => 'text_field' %>
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
